@@ -1,0 +1,16 @@
+ssh postgres@10.237.26.51
+password ********   (Ask me at godiya.girraj2@gmail.com)
+~bash-4.2$ psql
+
+\l
+\c lprs_db
+\dt
+\d lprs_db.event_details;
+select transid , event_time , speed_violation , speed_value , vehicle_type , gateid , gatename from lprs_db.event_details;
+
+ssh -L 5000:localhost:5432 postgres@10.237.26.51
+10.184.9.143
+
+cop (file://CODIN/cop)
+
+ \copy (select transid , event_time  speed_violation , speed_value , vehicle_type , gateid , gatename from lprs_db.event_details)  TO 'D:\BOOKS\sem6\COP315\oo' (format TEXT); 
